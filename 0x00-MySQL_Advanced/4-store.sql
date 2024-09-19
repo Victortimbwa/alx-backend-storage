@@ -1,4 +1,5 @@
---Task: Create a trigger that decreases quantinty of an item
--- After adding a new order
-CREATE TRIGGER decrease_quantity AFTER INSERT ON orders FOR EACH ROW
+-- Script that creates a trigger that decreases
+-- quantity of item after adding a new order
+CREATE TRIGGER decrease_q AFTER INSERT ON orders FOR EACH ROW
 UPDATE items SET quantity = quantity - NEW.number WHERE name = NEW.item_name;
+
